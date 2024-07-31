@@ -21,14 +21,20 @@ long	ft_atoi(const char *str)
 	i = 0;
 	n = 1;
 	r = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '+')
 		i++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		r = r * 10 + str[i] - '0';
-		if (r > 4294967295)
+		if (r > 2147483647)
+			return (-1);
+		i++;
+	}
+	while (str[i] != '\0')
+	{
+		if (str[i] != ' ')
 			return (-1);
 		i++;
 	}
