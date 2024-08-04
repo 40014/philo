@@ -12,7 +12,7 @@
 
 #include "philosophers.h"
 
-int	checkckers_philo_routine(t_data *data, int i)
+int	checkers_philo_routine(t_data *data, int i)
 {
 	pthread_mutex_lock(&data->philo_dead_mutex);
 	if (data->philo_dead == 1)
@@ -59,7 +59,7 @@ void	*routine_philo(void *philo_arguments)
 	{
 		while (philo->argument.num_limit_meals > philo->philo[i].num_time_ate)
 		{
-			if (checkckers_philo_routine(philo, i) == 1)
+			if (checkers_philo_routine(philo, i) == 1)
 				break ;
 		}
 	}
@@ -67,7 +67,7 @@ void	*routine_philo(void *philo_arguments)
 	{
 		while (1)
 		{
-			if (checkckers_philo_routine(philo, i) == 1)
+			if (checkers_philo_routine(philo, i) == 1)
 				break ;
 		}
 	}

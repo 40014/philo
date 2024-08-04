@@ -22,7 +22,7 @@ void	ft_fill(t_data *data, int i, int j)
 {
 	data->philo[i].id = i + 1;
 	data->philo[i].num_time_ate = 0;
-	data->philo[i].last_time_eat = 0;
+	data->philo[i].last_time_eat = get_time();
 	data->philo[i].left_fork = i;
 	data->philo[i].right_fork = j;
 }

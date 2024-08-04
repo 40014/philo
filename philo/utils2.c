@@ -85,6 +85,7 @@ int	execute_routine(t_data *philo, int i)
 	pthread_mutex_unlock(&philo->philo_dead_mutex);
 	if (philo_is_thinking(philo, i) == 0)
 		return (0);
+	usleep(500);
 	return (1);
 }
 

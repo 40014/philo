@@ -87,7 +87,6 @@ int	philo_is_dead(t_data *philo, int *i)
 		*i = 0;
 	pthread_mutex_lock(&philo->philo[*i].eat_mutex);
 	time = get_time() - philo->philo[*i].last_time_eat;
-	printf("time %d\n", time);
 	pthread_mutex_unlock(&philo->philo[*i].eat_mutex);
 	if (time > philo->argument.time_to_die)
 	{
